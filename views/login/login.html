@@ -1,0 +1,29 @@
+
+  <link rel="stylesheet" href="/processos/resources/css/index.css" />
+  <link rel="stylesheet" href="/processos/resources/css/default-properties.css" />
+  <link rel="stylesheet" href="/processos/resources/css/header/navbar-only-title.css">
+  <div class="navbar">
+    <h1>Secretaria Acadêmica do Ensino Superior</h1>
+  </div>
+  <main>
+    <form class="loginForm" action="/processos/login" method="post">
+      <table>
+        <tr>
+          <td><label><i class="far fa-user"></i> Email</label></td>
+          <td><label><i class="fas fa-key"></i> Senha</label></td>
+        </tr>
+        <tr>
+          <td><input type="email" name="email" value="" placeholder="Insira seu email" autocomplete="off" required></td>
+          <td><input type="password" name="password" value="" placeholder="Insira sua senha" autocomplete="off" required></td>
+        </tr>
+      </table>
+      <div class="esqueceuSenha">
+        <i class="fas fa-unlock"></i> <a href="/processos/recuperarsenha">Esqueceu sua senha?</a>
+      </div>
+      <button class="submitButton" type="submit" name="button">
+        <i class="fas fa-sign-in-alt"></i> Acessar
+      </button>
+      {if="$e != ''"}<p class="alertText">Login inexistente ou senha inválida!</p>
+      {/if}</form>
+  </main>
+  <script src="https://kit.fontawesome.com/50093ed56c.js" crossorigin="anonymous"></script>

@@ -1,0 +1,74 @@
+.cadastradosLista {
+  overflow-x: auto;
+  overflow-y: auto;
+  height: 300px;
+  margin-top: 50px;
+  width: 80%;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+table {
+  font-size: 16px;
+  text-align: center;
+  table-layout: fixed;
+}
+
+thead {
+  background-color: #495464;
+  color: white;
+}
+
+th {
+  font-weight: lighter;
+}
+
+th, td {
+  padding: 5px;
+}
+
+#destino {
+  width: 100px;
+}
+
+#dataMovimento {
+  width: 100px;
+}
+
+#movimento {
+  width: 600px;
+}
+
+#remover {
+  width: 100px;
+}
+
+#concluido {
+  width: 100px;
+}
+
+td button {
+  margin: 0 5px;
+  display: inline-block;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  font-size: 16px;
+  margin: 0 10px;
+  transition: 0.4s;
+}
+
+td button:hover {
+  transition: 0.2s;
+}
+
+#deleteButton a {
+  color: black;
+  transition: 0.4s;
+}
+
+#deleteButton a:hover {
+  color: #f54242;
+  transition: 0.4s;
+}

@@ -1,0 +1,74 @@
+/* Area principal(form) */
+main {
+  width: 40%;
+  margin: auto;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.loginForm {
+  margin-bottom: 50px;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+}
+
+label {
+  font-size: 22px;
+  display: grid;
+}
+
+input {
+  border-color: #495464;
+  background-color: #F4F4F2;
+  border-style: none none inset none;
+  border-radius: 3px;
+  height: 35px;
+  margin-bottom: 20px;
+  width: 80%;
+  transition: 0.2s;
+}
+
+input:focus {
+  outline: inherit;
+  text-indent: 10px;
+  border-color: #526480;
+  transition: 0.2s;
+}
+
+#checkConclude {
+  margin-bottom: 20px;
+}
+
+input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  margin-bottom: 0;
+}
+
+#labelConclude {
+  display: inline;
+}
+
+select {
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.submitButton {
+  border: none;
+  background-color: #495464;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  height: 35px;
+  width: 40%;
+  transition: 0.2s;
+}
+
+.submitButton:hover {
+  background-color: #526480;
+  transition: 0.2s;
+}

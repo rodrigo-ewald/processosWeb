@@ -1,0 +1,98 @@
+/* Importa a fonte "Poppins" do site Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* Alguns padrões do site */
+body {
+  font-size: 18px;
+  margin: 0;
+  background-color: #F4F4F2;
+  color: #404040;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+/* Estilização da navbar(barra superior) */
+.navbar {
+  overflow: hidden;
+  background-color: #495464;
+}
+
+h1 {
+  color: white;
+  font-size: 22px;
+  font-weight: lighter;
+}
+
+/* Area principal(form) */
+main {
+  width: 40%;
+  margin: auto;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  margin-top: 32%;
+  text-align: center;
+}
+
+label {
+  font-size: 24px;
+}
+
+input {
+  border-color: #495464;
+  background-color: #F4F4F2;
+  border-style: none none inset none;
+  border-radius: 3px;
+  height: 35px;
+  width: 80%;
+  transition: 0.2s;
+}
+
+input:focus {
+  outline: inherit;
+  text-indent: 10px;
+  border-color: #526480;
+  transition: 0.2s;
+}
+
+.esqueceuSenha, a {
+  font-size: 14px;
+  text-decoration: none;
+  margin: 20px 0;
+  color: #526480;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.submitButton {
+  border: none;
+  background-color: #495464;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  height: 35px;
+  width: 40%;
+  transition: 0.2s;
+}
+
+.submitButton:hover {
+  background-color: #526480;
+  transition: 0.2s;
+}
+
+/* Alerta de erro no login */
+.alertText {
+  color: #ff6363;
+  font-size: 14px;
+  user-select: none;
+  margin-top: 20px;
+}
+
+.alertText:hover {
+  color: #ff6363;
+  user-select: text;
+}

@@ -1,0 +1,62 @@
+.navbar {
+  background-color: #495464;
+  user-select: none;
+  padding: 10px 10px 0 10px;
+  text-align: center;
+}
+
+h1 {
+  color: white;
+  font-size: 22px;
+  font-weight: lighter;
+  margin: 0;
+}
+
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.menu {
+  color: white;
+  font-size: 16px;
+}
+
+.menu ul li {
+  list-style: none;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.menu p {
+  padding-bottom: 10px;
+}
+
+.menu a, .menu p {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 0 10px;
+}
+
+.submenu {
+  text-align: center;
+  padding-bottom: 10px;
+  line-height: 30px;
+  width: 100px;
+  margin-left: 10px;
+  background: #495464;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  position: absolute;
+  display: none;
+}
+
+.submenu li a:hover {
+  text-decoration: underline;
+}
+
+.menu ul li:hover > .submenu {
+  display: grid;
+}

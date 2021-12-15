@@ -1,0 +1,115 @@
+
+	<link rel="stylesheet" href="/processos/resources/css/default-properties.css">
+	<link rel="stylesheet" href="/processos/resources/css/header/navbar-full.css">
+	<link rel="stylesheet" href="/processos/resources/css/editar-aluno.css">
+	<link rel="stylesheet" href="/processos/resources/css/cadastrar-aluno.css">
+	<div class="navbar">
+		<h1>Secretaria Acadêmica do Ensino Superior</h1>
+		<div class="menu">
+			<ul>
+				<li>
+					<p><i class="far fa-plus-square"></i> Cadastrar</p>
+					<ul class="submenu">
+						<li><a href='/processos/app/aluno/cadastrar'>Alunos</a></li>
+						<li><a href='/processos/app/curso/cadastrar'>Cursos</a></li>
+						<li><a href='/processos/app/motivo/cadastrar'>Motivos</a></li>
+					</ul>
+				</li>
+				<li><a href="/processos/app/aluno/listagem"><i class="far fa-address-card"></i> Listagem</a></li>
+				<li><a href="/processos/app/logout"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+			</ul>
+		</div>
+	</div>
+	<main>
+		<h2 style="text-decoration: underline; font-weight: lighter;">Informações do Aluno</h2>
+		<form class="loginForm" action="/processos/app/aluno/processo/editar/{$aluno.0.idProcesso}" method="post">
+			<label>Nome</label>
+			<input type="text" name="nome" style="font-weight: bolder" value={if="$aluno.0.nome == '' || $aluno.0.nome == NULL"}"Nome não cadastrado"{else}"{$aluno.0.nome}"{/if} >
+			<table>
+				<tr>
+					<td> <label>Nº CI</label> </td>
+					<td><label>Nº Processo</label></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="numCI" style="font-weight: bolder" value={if="$aluno.0.numCI == '' || $aluno.0.numCI == NULL"}"CI não cadastrada"{else}"{$aluno.0.numCI}"{/if} ></td>
+					<td><input type="text" name="numProcesso" style="font-weight: bolder" value={if="$aluno.0.numProcesso == '' || $aluno.0.numProcesso == NULL"}"Processo não cadastrado"{else}"{$aluno.0.numProcesso}"{/if} ></td>
+				</tr>
+				<tr>
+					<td><label>1º Envio</label></td>
+					<td><label>Colação de Grau</label></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="priEnvio" id="data1" style="font-weight: bolder" onClick="value=''" value={if="$aluno.0.priEnvio == '' || $aluno.0.priEnvio == NULL"}"Data não cadastrada"{else}{$aluno.0.priEnvio}{/if} ></td>
+					<td><input type="text" name="anoGrau" id="data2" style="font-weight: bolder" onClick="value=''" value={if="$aluno.0.anoGrau == '' || $aluno.0.anoGrau == NULL"}"Data não cadastrada"{else}"{$aluno.0.anoGrau}"{/if} ></td>
+				</tr>
+			</table>
+			<label>Curso</label>
+			<select class="" name="idCurso" style="font-weight: bolder" >
+				<option value="{$aluno.0.idCurso}" selected hidden>{$aluno.0.sigla} - {$aluno.0.nomeCurso}</option>
+				{loop="$cursos"}
+				<option value="{$value.idCurso}">{$value.sigla} - {$value.nomeCurso}</option>
+				{/loop}
+			</select>
+			<label>Motivo</label>
+			<select class="" name="idMotivo" style="font-weight: bolder" >
+				<option value="{$aluno.0.id}" selected hidden>{$aluno.0.motivo}</option>
+				{loop="$motivos"}
+				<option value="{$value.id}">{$value.motivo}</option>
+				{/loop}
+			</select>
+			<div id="checkConclude">
+				<input type="checkbox" name="concluido" {if="$aluno.0.concluido == 1"}checked{/if} >
+				<label id="labelConclude" {if="$aluno.0.concluido == 1"}style="font-weight: bolder"{/if}>Concluido</label>
+			</div>
+			<button class="submitButton" type="submit" name="button" onclick="return confirm('Deseja realmente alterar este processo?')">
+				<i class="fas fa-plus"></i> Alterar
+			</button>
+		</form>
+		<br>
+		<hr>
+		<br>
+		<h2 style="text-decoration: underline; font-weight: lighter;">Processos</h2>
+		<form class="aaaa" action="/processos/app/aluno/movimentos/{$aluno.0.idProcesso}" method="post">
+			<label>Movimento</label>
+			<input type="text" name="movimento" value="" placeholder="Insira o movimento" autocomplete="off" required>
+			<table>
+				<tr>
+					<td> <label>Destino</label> </td>
+					<td> <label>Data</label></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="destino" value="" placeholder="Insira o destino" autocomplete="off" required></td>
+					<td><input type="text" id="data3" name="dataMovimento" value=""  placeholder="Insira a data (ANO-MÊS-DIA)" autocomplete="off" required></td>
+				</tr>
+			</table>
+			<button class="submitButton" type="submit" name="button">
+				<i class="fas fa-plus"></i> Adicionar
+			</button>
+		</form>
+	</main>
+	<div class="cadastradosLista">
+		<table>
+			<thead>
+				<tr>
+					<th id="destino">Destino</th>
+					<th id="dataMovimento">Data</th>
+					<th id="movimento">Movimento</th>
+					<th id="remover">Deletar</th>
+				</tr>
+			</thead>
+			<tbody>
+				{loop="$movimentos"}<tr>
+					<td id="destino">{$movimentos.$key.destino}</td>
+					<td id="dataMovimento">{$movimentos.$key.dataMovimento}</td>
+					<td id="movimento">{$movimentos.$key.movimento}</td>
+					<td id="remover">
+						<button type="button" name="button" title="Deletar" id="deleteButton"> <a href="/processos/app/aluno/movimentos/deletar/{$movimentos.$key.idMovimento}" onclick="return confirm('Deseja realmente excluir este movimento?')"><i class="fas fa-trash"></i></a> </button>
+					</td>
+				</tr>
+			{/loop}</tbody>
+		</table>
+	</div>
+	<script type="text/javascript" src="/processos/resources/js/dateMask1.js"></script>
+	<script type="text/javascript" src="/processos/resources/js/dateMask2.js"></script>
+	<script type="text/javascript" src="/processos/resources/js/dateMask3.js"></script>
+	<script src="https://kit.fontawesome.com/50093ed56c.js" crossorigin="anonymous"></script>

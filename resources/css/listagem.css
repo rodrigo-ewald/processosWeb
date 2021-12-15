@@ -1,0 +1,114 @@
+.searchEngine {
+  text-align: center;
+}
+
+.areaBusca {
+  border-color: #495464;
+  background-color: #F4F4F2;
+  border-style: none none inset none;
+  border-radius: 3px;
+  font-size: 18px;
+  height: 2em;
+  width: 300px;
+  margin: 50px 0;
+  transition: 0.2s;
+}
+
+.areaBusca:focus {
+  outline: 0;
+  text-indent: 5px;
+  transition: 0.2s;
+}
+
+.cadastradosLista {
+  overflow-x: auto;
+}
+
+table {
+  width: 50%;
+  font-size: 16px;
+  margin: auto;
+  text-align: center;
+  table-layout: fixed;
+}
+
+thead {
+  background-color: #495464;
+  color: white;
+}
+
+th {
+  font-weight: lighter;
+}
+
+th, td {
+  padding: 5px;
+}
+
+#codigo {
+  width: 100px;
+}
+
+#numProcesso {
+  width: 300px;
+}
+
+#nome {
+  width: 400px;
+}
+
+#nome a{
+  color: #404040;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+#nome a:hover {
+  color: black;
+  text-decoration: underline;
+  transition: 0.2s;
+
+}
+
+#alterar {
+  width: 100px;
+}
+
+#concluido {
+  width: 100px;
+}
+
+td button {
+  margin: 0 5px;
+  display: inline-block;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  font-size: 16px;
+  margin: 0 10px;
+  transition: 0.4s;
+}
+
+td button:hover {
+  transition: 0.2s;
+}
+
+#editButton a {
+  color: black;
+  transition: 0.4s;
+}
+
+#editButton a:hover {
+  color: #4287f5;
+  transition: 0.4s;
+}
+
+#deleteButton a {
+  color: black;
+  transition: 0.4s;
+}
+
+#deleteButton a:hover {
+  color: #f54242;
+  transition: 0.4s;
+}

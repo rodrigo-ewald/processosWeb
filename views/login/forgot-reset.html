@@ -1,0 +1,24 @@
+
+    <link rel="stylesheet" href="/processos/resources/css/default-properties.css" />
+    <link rel="stylesheet" href="/processos/resources/css/header/navbar-only-title.css">
+    <link rel="stylesheet" href="/processos/resources/css/reset-password.css">
+    <div class="navbar">
+      <h1>Secretaria Acadêmica do Ensino Superior</h1>
+    </div>
+    <main>
+      <form class="loginForm" action="/processos/recuperarsenha/reset" method="post">
+        <input type="hidden" name="code" value="{$code}">
+        <table>
+          <tr>
+            <td><label><i class="fas fa-key"></i> Olá {$name},</label></td>
+          </tr>
+          <tr>
+            <td><input type="password" name="password" value="" placeholder="Insira sua nova senha"></td>
+          </tr>
+        </table>
+        <button class="submitButton" type="submit" name="button">
+          <i class="fas fa-lock-open"></i> Redefinir
+        </button>
+      </form>
+    </main>
+    <script src="https://kit.fontawesome.com/50093ed56c.js" crossorigin="anonymous"></script>

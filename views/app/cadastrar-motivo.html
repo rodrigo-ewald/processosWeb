@@ -1,0 +1,40 @@
+
+    <link rel="stylesheet" href="/processos/resources/css/default-properties.css" />
+    <link rel="stylesheet" href="/processos/resources/css/header/navbar-only-title.css">
+    <link rel="stylesheet" href="/processos/resources/css/header/navbar-full.css">
+    <link rel="stylesheet" href="/processos/resources/css/cadastrar.css">
+    <link rel="stylesheet" href="/processos/resources/css/forgot.css">
+    <div class="navbar">
+      <h1>Secretaria Acadêmica do Ensino Superior</h1>
+      <div class="menu">
+        <ul>
+          <li>
+            <p><i class="far fa-plus-square"></i> Cadastrar</p>
+            <ul class="submenu">
+              <li><a href="/processos/app/aluno/cadastrar">Alunos</a></li>
+              <li><a href="/processos/app/curso/cadastrar">Cursos</a></li>
+              <li><a href="/processos/app/motivo/cadastrar">Motivos</a></li>
+            </ul>
+          </li>
+          <li><a href='/processos/app/aluno/listagem'><i class="far fa-address-card"></i> Listagem</a></li>
+          <li><a href='/processos/app/logout'><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <main>
+      <form class="loginForm" action="/processos/app/motivo/cadastrar" method="post">
+        <table>
+          <tr>
+            <td><label><i class="far fa-question-circle"></i> Motivo</label></td>
+          </tr>
+          <tr>
+            <td><input type="text" name="motivo" value="" placeholder="Insira o motivo" autocomplete="off"></td>
+          </tr>
+        </table>
+        <button class="submitButton" type="submit" name="button">
+          <i class="fas fa-plus"></i> Adicionar
+        </button>
+      </form>
+    </main>
+    <script src="https://kit.fontawesome.com/50093ed56c.js" crossorigin="anonymous"></script>

@@ -1,0 +1,69 @@
+
+	<link rel="stylesheet" href="/processos/resources/css/default-properties.css">
+	<link rel="stylesheet" href="/processos/resources/css/header/navbar-only-title.css">
+	<link rel="stylesheet" href="/processos/resources/css/header/navbar-full.css">
+	<link rel="stylesheet" href="/processos/resources/css/cadastrar-aluno.css">
+	<div class="navbar">
+		<h1>Secretaria Acadêmica do Ensino Superior</h1>
+		<div class="menu">
+			<ul>
+				<li>
+					<p><i class="far fa-plus-square"></i> Cadastrar</p>
+					<ul class="submenu">
+						<li><a href="/processos/app/aluno/cadastrar">Alunos</a></li>
+						<li><a href="/processos/app/curso/cadastrar">Cursos</a></li>
+						<li><a href="/processos/app/motivo/cadastrar">Motivos</a></li>
+					</ul>
+				</li>
+				<li><a href="/processos/app/aluno/listagem"><i class="far fa-address-card"></i> Listagem</a></li>
+				<li><a href="/processos/app/logout"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+			</ul>
+		</div>
+	</div>
+	<main>
+		<form class="loginForm" action="/processos/app/aluno/cadastrar" method="post">
+			<label>Nome</label>
+			<input type="text" name="nome" value="" placeholder="Insira seu nome" required autocomplete="off">
+			<table>
+				<tr>
+					<td>Nº CI</td>
+					<td>Nº Processo</td>
+				</tr>
+				<tr>
+					<td><input type="text" name="numCI" value="" placeholder="Insira a CI" autocomplete="off"></td>
+					<td><input type="text" name="numProcesso" value="" placeholder="Insira o número do processo" autocomplete="off"></td>
+				</tr>
+				<tr>
+					<td>1º Envio</td>
+					<td>Colação de Grau</td>
+				</tr>
+				<tr>
+					<td><input type="text" name="priEnvio" id="data1" placeholder="Insira a data (ANO-MÊS-DIA)" autocomplete="off"></td>
+					<td><input type="text" name="anoGrau" id="data2" placeholder="Insira a data (ANO-MÊS-DIA)" autocomplete="off"></td>
+				</tr>
+			</table>
+
+			<label>Curso</label>
+			<select class="" name="idCurso">
+				{loop="$cursos"}
+				<option value="{$value.idCurso}">{$value.idCurso} - {$value.sigla} - {$value.nomeCurso}</option>
+				{/loop}
+			</select>
+			<label>Motivo</label>
+			<select class="" name="idMotivo">
+				{loop="$motivos"}
+				<option value="{$value.id}">{$value.id} - {$value.motivo}</option>
+				{/loop}
+			</select>
+			<div id="checkConclude">
+				<input type="checkbox" name="concluido" value="">
+				<label id="labelConclude">Concluido</label>
+			</div>
+			<button class="submitButton" type="submit" name="button">
+				<i class="fas fa-plus"></i> Adicionar
+			</button>
+		</form>
+	</main>
+	<script type="text/javascript" src="/processos/resources/js/dateMask1.js"></script>
+	<script type="text/javascript" src="/processos/resources/js/dateMask2.js"></script>
+	<script src="https://kit.fontawesome.com/50093ed56c.js" crossorigin="anonymous"></script>

@@ -1,0 +1,50 @@
+
+  <link rel="stylesheet" href="/processos/resources/css/default-properties.css">
+  <link rel="stylesheet" href="/processos/resources/css/header/navbar-full.css">
+  <link rel="stylesheet" href="/processos/resources/css/listagem.css">
+  <div class="navbar">
+    <h1>Secretaria Acadêmica do Ensino Superior</h1>
+    <div class="menu">
+      <ul>
+        <li>
+          <p><i class="far fa-plus-square"></i> Cadastrar</p>
+          <ul class="submenu">
+            <li><a href='/processos/app/aluno/cadastrar'>Alunos</a></li>
+            <li><a href='/processos/app/curso/cadastrar'>Cursos</a></li>
+            <li><a href='/processos/app/motivo/cadastrar'>Motivos</a></li>
+          </ul>
+        </li>
+        <li><a href='/processos/app/aluno/listagem'><i class="far fa-address-card"></i> Listagem</a></li>
+        <li><a href='/processos/app/logout'><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="searchEngine">
+    <input class="areaBusca" type="text" id="search" name="" placeholder="Buscar por aluno" autocomplete="off">
+  </div>
+  <div class="cadastradosLista">
+    <table>
+      <thead>
+        <tr>
+          <th id="codigo">Código</th>
+          <th id="numProcesso">Nº Processo</th>
+          <th id="nome">Nome</th>
+          <th id="concluido">Concluído</th>
+          <th id="alterar">Opções</th>
+        </tr>
+      </thead>
+      <tbody>
+        {loop="$alunos"}<tr>
+          <td id="codigo">{$value.idProcesso}</td>
+          <td id="numProcesso">{if="$value.numProcesso == '' || $value.numProcesso == NULL"}<strong>Número não cadastrado</strong>{else}{$value.numProcesso}{/if}</td>
+          <td id="nome"><a href=/processos/app/aluno/movimentos/{$value.idProcesso}>{if="$value.nome == '' || $value.nome == NULL"}<strong>Nome não cadastrado</strong>{else}{$value.nome}{/if}</a></td>
+          <td id="concluido">{if="$value.concluido == 1"}<strong>Sim</strong>{else}<strong>Não</strong>{/if}</td>
+          <td id="alterar">
+            <button type="button" name="button" title="Editar" id="editButton"> <a href="/processos/app/aluno/movimentos/{$value.idProcesso}"><i class="far fa-edit"></i></a> </button><button type="button" name="button" title="Deletar" id="deleteButton"><a href="/processos/app/aluno/{$value.idProcesso}/deletar" onclick="return confirm('Deseja realmente excluir o registro {$value.idProcesso}?')"><i class="fas fa-trash"></i></a></button>
+          </td>
+        </tr>
+        {/loop}</tbody>
+    </table>
+  </div>
+  <script type="text/javascript" src="/processos/resources/js/listFilter.js"></script>
+  <script src="https://kit.fontawesome.com/50093ed56c.js" crossorigin="anonymous"></script>
